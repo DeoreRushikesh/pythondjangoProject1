@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+     <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+      <!-- MDB CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb-ui-kit/css/mdb.min.css"/>
+
+    <!-- MDB JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit/js/mdb.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+      <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="container">
+    <h1 class="text-center"><b>Add Your Details Below</b></h1>
+    <form method='POST' action="{% url 'placeOrder' artwork.id  %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Enter Name</label>
+            <input class="form-control" type="text" name="citizenName" value="{{ request.user.get_full_name }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input class="form-control" type="number" name="contact">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input class="form-control" type="text" name="address">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Artwork Name</label>
+            <input class="form-control" type="text" name="artName" value="{{artwork.name}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Paid Amount</label>
+            <input class="form-control" type="number" name="paidAmount" value="{{artwork.price}}">
+        </div>
+
+        <div class="text-center">
+            <a class="btn btn-primary" onclick="javascript:history.back();">BACK</a>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+      <div class="error-message">{{ form.errors }}</div>
+</div>
+
+</body>
+</html>

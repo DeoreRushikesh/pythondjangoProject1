@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- MDB CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb-ui-kit/css/mdb.min.css"/>
+
+    <!-- Font Awesome CSS for star icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <!-- Your custom styles (if any) -->
+    <link rel="stylesheet" href="{% static 'path/to/your/custom.css' %}">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- MDB JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit/js/mdb.min.js"></script>
+
+    <!-- Font Awesome JS for star icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+     <!--    font icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom JavaScript for card animation -->
+    <script>
+        $(document).ready(function () {
+            // Simple card animation for movement
+            $(".review-card").hover(
+                function () {
+                    $(this).addClass("animate__animated animate__pulse");
+                },
+                function () {
+                    $(this).removeClass("animate__animated animate__pulse");
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+{% include "header.html" %}
+<div class="container mt-5 border p-4 shadow-lg">
+    <h1 class="text-center">Contact Us</h1>
+    <div class="row mt-4">
+        <div class="col-md-6 border rounded p-3 shadow">
+            <!-- Image Section -->
+            <img src="/media/img.png"
+                 alt="Creative Image" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 border rounded p-3 shadow">
+            <!-- Form Section -->
+            <form style="width: 26rem;">
+
+                <!-- Name input -->
+                <div class="mb-4">
+                    <label for="form4Example1" class="form-label">Name</label>
+                    <input type="text" id="form4Example1" class="form-control"/>
+                </div>
+
+                <!-- Email input -->
+                <div class="mb-4">
+                    <label for="form4Example2" class="form-label">Email address</label>
+                    <input type="email" id="form4Example2" class="form-control"/>
+                </div>
+
+                <!-- Message input -->
+                <div class="mb-4">
+                    <label for="form4Example3" class="form-label">Message</label>
+                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                    <input
+                            class="form-check-input me-2"
+                            type="checkbox"
+                            value=""
+                            id="form4Example4"
+                            checked
+                    />
+                    <label class="form-check-label" for="form4Example4">
+                        Send me a copy of this message
+                    </label>
+                </div>
+
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Send</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Other Reviews Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4">Other Reviews</h3>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card review-card border rounded p-3 shadow">
+                <p class="mb-0">Amazing artwork!</p>
+                <div class="text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card review-card border rounded p-3 shadow">
+                <p class="mb-0">Incredible attention to detail. Highly recommend!</p>
+                <div class="text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card review-card border rounded p-3 shadow">
+                <p class="mb-0">Beautiful and unique pieces.</p>
+                <div class="text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
